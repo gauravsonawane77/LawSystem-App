@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:tools="http://schemas.android.com/tools">
+    <domain-config cleartextTrafficPermitted="true">
+        <domain tools:ignore="NetworkSecurityConfig">172.16.199.194</domain> <!-- For local dev via Android emulator -->
+    </domain-config>
+</network-security-config>

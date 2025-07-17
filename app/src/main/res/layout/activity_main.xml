@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- App Logo and App Name -->
+        <LinearLayout
+            android:id="@+id/linearAppHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp">
+
+            <ImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/app_logo" />
+
+            <TextView
+                android:id="@+id/textViewAppName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Law System"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageViewSearch"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_search" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Outer Box -->
+            <FrameLayout
+                android:id="@+id/frameLayoutOuterBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E0E0E0"
+                android:padding="16dp">
+
+                <!-- Profile Image -->
+                <ImageView
+                    android:id="@+id/imageViewProfile"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/man" />
+
+                <!-- Inner Box -->
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutInnerBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginStart="16dp"
+                    android:paddingStart="76dp">
+
+                    <!-- Name -->
+                    <TextView
+                        android:id="@+id/textViewName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="John Doe"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <!-- Email -->
+                    <TextView
+                        android:id="@+id/textViewEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewName"
+                        android:layout_marginTop="4dp"
+                        android:text="john.doe@example.com"
+                        android:textColor="#707070"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textViewlogout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewEmail"
+                        android:layout_marginTop="4dp"
+                        android:text="Logout"
+                        android:textColor="#6372CB"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lawbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Laws"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:layout_marginStart="10dp"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/lawyerbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lawyer"
+                    android:textSize="22sp"
+                    android:textColor="#000000"
+                    android:textAlignment="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/criminalbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Criminal"
+                    android:textColor="#000000"
+                    android:textSize="22sp"
+                    android:textAlignment="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewLaws"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:padding="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewLawyers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:padding="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCriminals"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:padding="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="18dp"
+        android:src="@drawable/chatbot"
+        android:backgroundTint="#FFD54F"
+         />
+</RelativeLayout>
